@@ -28,7 +28,7 @@ class ChatFilterTask extends PluginTask {
      * @param  integer $currentTick The current tick
      * @return null                 Nothing
      */
-    public function onRun($currentTick) {
+    public function onRun(int $currentTick): null {
         $this->getOwner()->filter->clearRecentChat();
     }
 }
