@@ -76,7 +76,7 @@ class Main extends PluginBase implements Listener {
      * @param  array         $args    An array of arguments
      * @return boolean                True allows the command to go through, false sends an error
      */
-    public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
         $subcommand = strtolower(array_shift($args));
         switch ($subcommand) {
             case "adduser":
