@@ -134,7 +134,7 @@ class ChatClasser {
 	 * @param $inString text to check.
 	 * @return bool true if it is bac.
 	 */
-	public function check($inString) {
+	public function check($inString): bool {
 		$this->resetToDefaultState();
 
 		$ETStart = microtime();
@@ -217,7 +217,7 @@ class ChatClasser {
 	 * @param $inString
 	 * @return bool
 	 */
-	protected function checkRaw($inString) {
+	protected function checkRaw($inString): bool {
 		$inString = ' ' . $inString . ' ';		  // Add to the ends so things looking for a terminator after a word can work
 
 		$patternList = array(// Reason this is hard to detect:
@@ -281,7 +281,7 @@ class ChatClasser {
 	 * @param $inString
 	 * @return bool
 	 */
-	protected function detectSpecialProfane($inString) {
+	protected function detectSpecialProfane($inString): bool {
 		$inString = ' ' . $inString . ' ';		  // Add to the ends so things looking for a terminator after a word can work
 
 		$patternList = array(// Reason this is hard to detect:
