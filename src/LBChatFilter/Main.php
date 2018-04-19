@@ -29,7 +29,7 @@ class Main extends PluginBase implements Listener {
      *
      * @return null
      */
-    public function onLoad() {
+    public function onLoad(): void {
         $this->getLogger()->info(TextFormat::WHITE . "Loaded");
     }
 
@@ -38,7 +38,7 @@ class Main extends PluginBase implements Listener {
      *
      * @return null
      */
-    public function onEnable() {
+    public function onEnable(): void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
         $this->reloadConfig();
@@ -126,7 +126,7 @@ class Main extends PluginBase implements Listener {
      * @param  PlayerChatEvent $event The event
      * @return null                   Nothing to return
      */
-    public function onPlayerChat(PlayerChatEvent $event) {
+    public function onPlayerChat(PlayerChatEvent $event): void {
         if (!in_array($event->getPlayer()->getDisplayName(), $this->users) && !$this->filter->check($event->getPlayer(), $event->getMessage())) {
             $event->setCancelled(true);
             $event->getPlayer()->sendMessage(TextFormat::RED . "[LBCF] I'm sorry, I can't let you say that.");
@@ -138,7 +138,7 @@ class Main extends PluginBase implements Listener {
      *
      * @return null
      */
-    public function onDisable() {
+    public function onDisable(): void {
         $this->getConfig()->set('users', $this->users);
         $this->getConfig()->save();
 
