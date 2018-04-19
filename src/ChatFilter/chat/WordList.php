@@ -152,7 +152,7 @@ class WordList {
      * @param $inString text to be tested.
      * @return bool true if the $inString contains a word on the list.
      */
-    function checkLeet($inString)
+    function checkLeet($inString): bool
     {
         if (!$this->isLeet) return false;
         $matches = array();
