@@ -38,10 +38,10 @@ class ChatFilter {
 	 *
 	 * @param LbPlayer $player
 	 * @param string $message
-	 * @param boolean $needCheck
-	 * @return boolean
+	 * @param bool $needCheck
+	 * @return bool
 	 */
-	public function check(LBPlayer $player, string $message, boolean $needCheck = true): boolean {
+	public function check(LBPlayer $player, string $message, bool $needCheck = true): bool {
 		// Check the message and log the result.
 		$checkResult = $this->profanityChecker->check($message);
 
