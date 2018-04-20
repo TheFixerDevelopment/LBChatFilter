@@ -238,10 +238,10 @@ class WordList {
         // var_dump($this->wordList);
         // var_dump($this->wordListLeet);
 
-        echo("<br>Word Entry => Leet Replacer Pattern <br>");
+        $plugin->getLogger()->info("<br>Word Entry => Leet Replacer Pattern <br>");
         for($index = 0;$index < count($this->wordList);$index++) {
             // Uses non thread-safe echo, but this function only called for testing.
-            echo("<br>".$index." ".$this->wordList[$index] . " => <br>" . $this->wordListLeet[$index] . "<br>");
+            $plugin->getLogger()->info("<br>".$index." ".$this->wordList[$index] . " => <br>" . $this->wordListLeet[$index] . "<br>");
         }
     }
 
