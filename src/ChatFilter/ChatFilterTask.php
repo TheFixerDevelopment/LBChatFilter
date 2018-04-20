@@ -18,7 +18,7 @@ class ChatFilterTask extends PluginTask {
      *
      * @param PluginBase $owner The owner
      */
-    public function __construct($owner) {
+    public function __construct(PluginBase $owner) {
         $this->owner = $owner;
     }
 
@@ -28,7 +28,7 @@ class ChatFilterTask extends PluginTask {
      * @param  integer $currentTick The current tick
      * @return null                 Nothing
      */
-    public function onRun(int $currentTick): null {
+    public function onRun(int $currentTick){
         $this->getOwner()->filter->clearRecentChat();
     }
 }
